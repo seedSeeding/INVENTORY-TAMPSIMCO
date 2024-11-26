@@ -21,7 +21,7 @@ export default defineConfig({
         react({include: /\.(js|jsx|ts|tsx)$/}),
         
         laravel({
-            input: ['resources/css/app.css','resources/js/script.js', 'resources/js/app.jsx'],
+            input: ['resources/css/app.css','resources/css/app.css','resources/js/script.js', 'resources/js/app.jsx'],
             refresh: true,
         }),
         

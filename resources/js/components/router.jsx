@@ -22,53 +22,49 @@ import Food from './components/Food.jsx';
 const router = createBrowserRouter([
     {
         path: '/',
-        element:<Login/>
-    }
-
-
-    //     element: <DefaultLayout />, 
-    //     children: [
-    //         {index:true,element:<Navigate to={"/products/foods"} replace/>},
-    //         {
-    //             path: 'products',
-    //             element: <ProductPage />,
-    //             children: [
-    //                 { path: 'faultry', element: <Faultry /> },
-    //                 { path: 'foods', element: <Food /> },
-    //                 { path: 'household', element: <Household /> },
-    //                 { path: 'laundry', element: <Laundry /> },
-    //                 { path: 'personal', element: <Personal /> },
-    //             ],
-    //         },
-    //         { path: 'sales', element: <ProductSales /> },
-    //         { path: 'statistics', element: <StatisticsPage /> },
-    //         { path: 'accounts', element: <AccountLogPage /> },
-    //         { path: 'manage', element: <ManagePage /> },
-    //         { path: 'settings', element: <SettingsPage /> },
-    //         { path: 'logout', element: <LogOutPage /> },
-    //         { path: 'product-list', element: <ProductListPage /> },
-    //     ],
-    // },
-    // {
-    //     path: '/',
-    //     element: <GuestLayout />,
-    //     children: [
-    //         {index:true,element:<Navigate to={"/login"} replace/>},
-    //         { path: 'login', element: <Login /> },
-    //     ],
-    // },
-    // {
-    //     path: '/verify-email/:id',
-    //     element: <Verification />,
-    // },
-    // {
-    //     path: '/register',
-    //     element: <RegistrationPage />,
-    // },
-    // {
-    //     path: '*',
-    //     element: <NotFound />,
-    // },
+        element: <DefaultLayout />, 
+        children: [
+            {index:true,element:<Navigate to={"/products/foods"} replace/>},
+            {
+                path: 'products',
+                element: <ProductPage />,
+                children: [
+                    { path: 'faultry', element: <Faultry /> },
+                    { path: 'foods', element: <Food /> },
+                    { path: 'household', element: <Household /> },
+                    { path: 'laundry', element: <Laundry /> },
+                    { path: 'personal', element: <Personal /> },
+                ],
+            },
+            { path: 'sales', element: <ProductSales /> },
+            { path: 'statistics', element: <StatisticsPage /> },
+            { path: 'accounts', element: <AccountLogPage /> },
+            { path: 'manage', element: <ManagePage /> },
+            { path: 'settings', element: <SettingsPage /> },
+            { path: 'logout', element: <LogOutPage /> },
+            { path: 'product-list', element: <ProductListPage /> },
+        ],
+    },
+    {
+        path: '/',
+        element: <GuestLayout />,
+        children: [
+            {index:true,element:<Navigate to={"/login"} replace/>},
+            { path: 'login', element: <Login /> },
+        ],
+    },
+    {
+        path: '/verify-email/:id',
+        element: <Verification />,
+    },
+    {
+        path: '/register',
+        element: <RegistrationPage />,
+    },
+    {
+        path: '*',
+        element: <NotFound />,
+    },
     
 ]);
 
