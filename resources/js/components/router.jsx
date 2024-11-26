@@ -1,9 +1,6 @@
-// Import necessary modules from react-router-dom
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-
-// Import all necessary components (make sure the paths are correct)
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import Login from './views/Login.jsx';
-import DefaultLayout from './components/DefaultLayout.jsx';
+import DefaultLayout from './components/DefaultLayout.jsx'; 
 import GuestLayout from './components/GuestLayout.jsx';
 import AccountLogPage from './views/AccountLogPage.jsx';
 import LogOutPage from './views/LogOutPage.jsx';
@@ -22,57 +19,53 @@ import Verification from './views/Verification.jsx';
 import RegistrationPage from './views/RegistrationPage.jsx';
 import Food from './components/Food.jsx';
 
-
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <DefaultLayout />, 
-    children: [
-      { index: true, element: <Navigate to="products/foods" replace /> }, 
-      {
-        path: 'products',
-        element: <ProductPage />, 
+    {
+        path: '/',
+        element: <DefaultLayout />, 
         children: [
-          { path: 'faultry', element: <Faultry /> },
-          { path: 'foods', element: <Food /> },
-          { path: 'household', element: <Household /> },
-          { path: 'laundry', element: <Laundry /> },
-          { path: 'personal', element: <Personal /> },
+            {index:true,element:<Navigate to={"/products/foods"} replace/>},
+            {
+                path: 'products',
+                element: <ProductPage />,
+                children: [
+                    { path: 'faultry', element: <Faultry /> },
+                    { path: 'foods', element: <Food /> },
+                    { path: 'household', element: <Household /> },
+                    { path: 'laundry', element: <Laundry /> },
+                    { path: 'personal', element: <Personal /> },
+                ],
+            },
+            { path: 'sales', element: <ProductSales /> },
+            { path: 'statistics', element: <StatisticsPage /> },
+            { path: 'accounts', element: <AccountLogPage /> },
+            { path: 'manage', element: <ManagePage /> },
+            { path: 'settings', element: <SettingsPage /> },
+            { path: 'logout', element: <LogOutPage /> },
+            { path: 'product-list', element: <ProductListPage /> },
         ],
-      },
-      { path: 'sales', element: <ProductSales /> },
-      { path: 'statistics', element: <StatisticsPage /> },
-      { path: 'accounts', element: <AccountLogPage /> },
-      { path: 'manage', element: <ManagePage /> },
-      { path: 'settings', element: <SettingsPage /> },
-      { path: 'logout', element: <LogOutPage /> },
-      { path: 'product-list', element: <ProductListPage /> },
-    ],
-  },
-  {
-    path: '/',
-    element: <GuestLayout />, 
-    children: [
-      { index: true, element: <Navigate to="/login" replace /> },
-    ],
-  },
-  {
-    path: '/verify-email/:id',
-    element: <Verification />,
-  },
-  {
-    path: '/register',
-    element: <RegistrationPage />, 
-  },
-  {
-    path: '*',
-    element: <NotFound />, 
-  },
+    },
+    {
+        path: '/',
+        element: <GuestLayout />,
+        children: [
+            {index:true,element:<Navigate to={"/login"} replace/>},
+            { path: 'login', element: <Login /> },
+        ],
+    },
+    {
+        path: '/verify-email/:id',
+        element: <Verification />,
+    },
+    {
+        path: '/register',
+        element: <RegistrationPage />,
+    },
+    {
+        path: '*',
+        element: <NotFound />,
+    },
+    
 ]);
 
-
-const App = () => (
-  <RouterProvider router={router} /> 
-);
-
-export default App;
+export default router;
