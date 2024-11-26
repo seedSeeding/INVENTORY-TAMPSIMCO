@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <DefaultLayout />, 
         children: [
-            // {index:1,element:<Navigate to={"/products/foods"} replace/>},
+            {index:true,element:<Navigate to={"/products/foods"} replace/>},
             {
                 path: 'products',
                 element: <ProductPage />,
@@ -49,6 +49,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <GuestLayout />,
         children: [
+            {index:true,element:<Navigate to={"/login"} replace/>},
             { path: 'login', element: <Login /> },
         ],
     },
