@@ -13,7 +13,7 @@ export default function Product({ product_image, product_name, id, product_quant
     };
     return (
         <div className="item" key={id}>
-            <img src={`Images/${product_image}`} alt="item-img" className="item-img" />
+            <img src={`/storage/${product_image}`} alt="item-img" className="item-img" />
             <div className="item-content">
                 <span className="item-text"><strong>Name: </strong>{product_name}</span>
                 <span className="item-text"><strong>Quantity: </strong>{product_quantity}</span>

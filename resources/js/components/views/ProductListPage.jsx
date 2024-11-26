@@ -81,7 +81,7 @@ export default function ProductListPage() {
                         <tr key={item.id}>
                             <td className="manage-table-d">
                                 <img 
-                                    src={`Images/${item.product_image}`} 
+                                    src={`/storage/${item.product_image}`} 
                                     alt={item.product_name} 
                                 />
                             </td>
